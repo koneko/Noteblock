@@ -26,6 +26,7 @@ if(!trash || trash == "[]" || trash == null) {
 var parsedNotes = JSON.parse(trash);
 
 parsedNotes.forEach(note => {
+    var not = note.content.replace(/\n/g, "<br>");
     var div = document.createElement('div');
     div.innerHTML =
     `
@@ -36,7 +37,7 @@ parsedNotes.forEach(note => {
     <!-- <p class="badge bg-info fs-6">ID: 1</p> -->
 </div>
 <div> 
-    ${note.content}
+    ${not}
 </div>
 
 <hr>
